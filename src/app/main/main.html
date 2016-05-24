@@ -1,0 +1,54 @@
+<div class="container">
+
+  <div>
+    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+  </div>
+
+  <div class="jumbotron text-center">
+    <h1>Hi ! I'm Bob !</h1>
+    <p class="lead">
+      <img src="assets/images/bob.png" alt="I'm Bob"><br>
+      I'm a 34 years old entrepreneur, and i would like people to present their startups <br />or even fresh new ideas they try in their garage on a interactive map.
+    </p>
+    <p class="malarkey">
+      Do you want to<span><acme-malarkey values="['share', 'innovate', 'create', 'meet']"></acme-malarkey></span> ?
+    </p>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Company</th>
+          <th>Founder</th>
+          <th>City</th>
+          <th>Adress</th>
+          <th>Website</th>
+        </tr>
+        <tr ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
+          <td>{{ awesomeThing.title }}</td>
+          <td>{{ awesomeThing.description }}</td>
+          <td></td>
+          <td></td>
+          <td><a ng-href="{{awesomeThing.url}}">Link</a></td>
+          <td class="thumbnail"><img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}"></td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
+      <div class="thumbnail">
+        <img class="pull-right img-circle" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
+        <div class="caption">
+          <h3>{{ awesomeThing.title }}</h3>
+          <p>{{ awesomeThing.description }}</p>
+          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

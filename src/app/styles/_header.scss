@@ -1,0 +1,49 @@
+body {
+
+  p {
+    &.lead {
+      img {
+        width: 35%;
+      }
+    }
+  }
+
+  .container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    .navbar {
+      background-color: $base-color;
+      border-radius: initial;
+      box-shadow: 0 1px 21px #000;
+      padding: 0 5%;
+      border-bottom: 2px solid orange;
+      li {
+        a {
+          color: #fff;
+          font-family: $font-raleway;
+          text-transform: uppercase;
+          &:hover {
+            background-color: orange;
+            color: $base-color;
+          }
+        }
+
+      }
+      .navbar-nav {
+        float: right;
+      }
+      .navbar-brand {
+        color: $white;
+        font-size: 20px;
+        font-family: $font-nothing;
+        animation: fadein 2s 1;
+      }
+      .navbar-header {
+        margin: 0 50px;
+      }
+    }
+  }
+
+}

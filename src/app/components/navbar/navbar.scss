@@ -1,0 +1,43 @@
+.acme-navbar-text{
+  color: white;
+}
+
+a {
+  color: black;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0;
+  line-height: 1.25em;
+}
+
+a:hover, a:focus {
+  color: greenyellow;
+}
+.navbar {
+  .navbar-brand {
+    color: #fff;
+    font-size: 26px;
+    font-family: 'Nothing You Could Do', cursive;
+    animation: fadein 2s 1;
+  }
+  .navbar-header {
+    margin: 0 50px;
+  }
+  > li {
+      > a {
+        color: #fff;
+      }
+  }
+}
+
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
