@@ -21,15 +21,5 @@ export class CsvImporterService {
     return Items;
 
 
-    // return this.$http.get(this.apiHost + '/contributors?per_page=' + limit)
-    //   .then((response) => {
-    //     return response.data;
-    //   })
-    //   .catch((error) => {
-    //     this.$log.error('XHR Failed for getCSV file.\n' + angular.toJson(error.data, true));
-    //   });
-
-
-
   }
 }
