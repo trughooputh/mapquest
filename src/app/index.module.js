@@ -7,6 +7,7 @@ import { MainController } from './main/main.controller';
 import { WebDevTecService } from '../app/components/webDevTec/webDevTec.service';
 import { NavbarDirective } from '../app/components/navbar/navbar.directive';
 import { FooterDirective } from '../app/components/footer/footer.directive';
+import { CsvImporterDirective } from '../app/components/csvImporter/csvImporter.directive';
 import { MalarkeyDirective } from '../app/components/malarkey/malarkey.directive';
 
 angular.module('mapquestBis',
@@ -18,6 +19,7 @@ angular.module('mapquestBis',
       .run(runBlock)
       .service('webDevTec', WebDevTecService)
       .controller('MainController', MainController)
-      .directive('footerDirective', FooterDirective)
       .directive('navbarDirective', NavbarDirective)
-      .directive('malarkeyDirective', MalarkeyDirective);
+      .directive('csvImporterDirective', CsvImporterDirective)
+      .directive('malarkeyDirective', MalarkeyDirective)
+      .directive('footerDirective', FooterDirective);

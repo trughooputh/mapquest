@@ -1,11 +1,16 @@
-.acme-malarkey {
-  text-transform: capitalize;
-  color: #cb3837;
-
-  &:after {
-    animation: cursor-blink 0.4s linear infinite;
-    content: "|";
-    color: #cb3837;
+.malarkey {
+  font-size: 30px;
+  span {
+    color: $base-color;
+    font-family: $font-nothing;
+    &:after {
+      animation: cursor-blink 0.4s linear infinite;
+      content: "|";
+      font-size: 23px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      position: relative;
+      top: -2px;
+    }
   }
 }
 

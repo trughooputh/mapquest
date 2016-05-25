@@ -5,6 +5,11 @@
 @import 'fonts';
 @import 'header';
 
+// Components
+@import '../components/navbar/navbar.scss';
+@import '../components/csvImporter/csvImporter.scss';
+@import '../components/malarkey/malarkey.scss';
+
 @import 'typography';
 
 body {
@@ -12,11 +17,8 @@ body {
     .jumbottron {
       padding: 20px;
     }
-
   }
-
 }
-
 
 /**
  *  If you want to override some bootstrap variables, you have to change values here.
@@ -45,15 +47,6 @@ body {
     width: 50px;
   }
 }
-
-.malarkey {
-  font-size: 30px;
-  span {
-    color: $base-color;
-    font-family: $font-nothing;
-  }
-}
-
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
