@@ -22,11 +22,11 @@ class CsvImporterController {
     var vm = this;
 
     vm.csvData = '';
-
     vm.startups = [];
 
     this.importData = function(data) {
       if (data) {
+        vm.startups = []
         vm.csvData = data;
         this.parseCsvData();
       }
@@ -38,6 +38,7 @@ class CsvImporterController {
 
       var rowObject = {};
 
+      // Each rows
       for(var rowIndex in csvRows) {
 
         let columns  = csvRows[rowIndex].split(',');
@@ -46,17 +47,11 @@ class CsvImporterController {
           rowObject[csvHeaders[headerIndex].trim()] = columns[headerIndex].trim();
         }
 
-        console.log(rowObject);
-
         vm.startups.push(rowObject);
 
         rowObject = {};
 
       }
-
-
-      console.log(vm.startups);
-
 
     }
 

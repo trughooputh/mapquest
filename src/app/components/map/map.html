@@ -1,6 +1,9 @@
-<ng-map zoom="11" center="[40.74, -74.18]">
-  <marker ng-repeat="p in vm.positions"
-    position="{{p.pos}}"
-    data="{{data[$index]}}"
-    title="pos: {{p.pos}}"></marker>
-</ng-map>
+<div map-lazy-load="https://maps.google.com/maps/api/js"
+  map-lazy-load-params="https://maps.googleapis.com/maps/api/js?key={{vm.apikey}}">
+  <ng-map zoom="10" center="[37.45,-122.16]">
+    <marker ng-repeat="p in vm.positions"
+      position="{{p.pos}}"
+      data="{{data[$index]}}"
+      title="pos: {{p.pos}}"></marker>
+  </ng-map>
+</div>
