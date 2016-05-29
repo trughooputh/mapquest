@@ -3,7 +3,7 @@
  * This example is not perfect.
  */
 
-describe('directive footer', function() {
+describe('directive map', function() {
   let vm;
   let element;
 
@@ -12,7 +12,7 @@ describe('directive footer', function() {
   beforeEach(inject(($compile, $rootScope) => {
 
     element = angular.element(`
-      <footer-directive></footer-directive>
+      <map-directive></map-directive>
     `);
 
     $compile(element)($rootScope.$new());
