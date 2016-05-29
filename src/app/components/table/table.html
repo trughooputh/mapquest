@@ -1,0 +1,26 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Company</th>
+        <th>Founder</th>
+        <th>Adress</th>
+        <th>City</th>
+        <th>Website</th>
+        <th>Photo</th>
+      </tr>
+      <tr ng-repeat="startup in vm.data">
+        <td>{{ startup.Id }}</td>
+        <td>{{ startup['Company Name'] }}</td>
+        <td>{{ startup.Founder }}</td>
+        <td>{{ startup['Street'] }} {{ startup['Postal Code'] }}</td>
+        <td>{{ startup['City'] }} ({{ startup['Country'] }})</td>
+        <td><a ng-href="{{ startup['Home Page'] }}" target='_blank'>Link</a></td>
+        <td class="thumbnail">
+          <img ng-src="{{ startup.Photo }}" alt="{{ startup.title }}">
+        </td>
+      </tr>
+    </thead>
+  </table>
+</div>

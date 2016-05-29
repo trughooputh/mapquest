@@ -1,3 +1,15 @@
-<div class="csv-importer">
-  <textarea name="name" rows="8" cols="40" ng-model="data" ng-value="data" ngChange="vm.importData()"></textarea>
+<div class="csv-importer text-center">
+  <textarea name="name" rows="8" cols="40" ng-model="data" ng-value="data" ></textarea>
+  <button type="button" class="btn btn-success" ng-click="vm.importData(data)">Import data</button>
 </div>
+
+<div>{{vm.data}}</div>
+
+<uib-tabset active="active" ng-show="vm.startups.length > 0">
+  <uib-tab index="0" heading="Table">
+    <table-directive data="vm.startups"></table-directive>
+  </uib-tab>
+  <uib-tab index="1" heading="Map">
+    <map-directive data="vm.startups"></map-directive>
+  </uib-tab>
+</uib-tabset>

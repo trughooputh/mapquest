@@ -3,7 +3,7 @@
  * This example is not perfect.
  */
 
-describe('directive csvImporter', function() {
+describe('directive footer', function() {
   let vm;
   let element;
 
@@ -12,7 +12,7 @@ describe('directive csvImporter', function() {
   beforeEach(inject(($compile, $rootScope) => {
 
     element = angular.element(`
-      <csv-importer></csv-importer>
+      <footer-directive></footer-directive>
     `);
 
     $compile(element)($rootScope.$new());

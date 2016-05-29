@@ -24,15 +24,12 @@ export function MalarkeyDirective(malarkey) {
       postfix: ' '
     });
 
-    el.addClass('acme-malarkey');
+    //el.addClass('acme-malarkey');
 
     angular.forEach(scope.values, (value) => {
       typist.type(value).pause().delete();
     });
 
-    scope.$on('$destroy', () => {
-      //watcher();
-    });
   }
 
 }

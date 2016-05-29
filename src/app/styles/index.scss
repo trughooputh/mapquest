@@ -14,9 +14,18 @@
 
 body {
   .container {
-    .jumbottron {
-      padding: 20px;
+    .text-center {
+      .row {
+        img {
+          width: 50%;
+        }
+      }
     }
+  }
+  h1 {
+    font-size: 2em;
+    margin: 0;
+    line-height: 1.25em;
   }
 }
 
@@ -41,10 +50,9 @@ body {
 }
 
 .thumbnail {
-  height: 200px;
-
-  img.pull-right {
-    width: 50px;
+  img {
+    max-width: 150px;
+    height: 80px;
   }
 }
 

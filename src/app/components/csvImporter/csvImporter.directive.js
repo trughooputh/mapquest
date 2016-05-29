@@ -9,11 +9,6 @@ export function CsvImporterDirective($log) {
     controllerAs: 'vm',
     bindToController: true,
     link: function (scope, element, attrs) {
-      //console.log(attrs);
-      scope.data = 'testssss';
-
-      element.val(scope.data);
-
     }
   };
 
@@ -21,10 +16,47 @@ export function CsvImporterDirective($log) {
 }
 
 class CsvImporterController {
-  constructor () {
+  constructor ($log) {
     'ngInject';
 
-    this.importData = function() {
+    var vm = this;
+
+    vm.csvData = '';
+
+    vm.startups = [];
+
+    this.importData = function(data) {
+      if (data) {
+        vm.csvData = data;
+        this.parseCsvData();
+      }
+    }
+
+    this.parseCsvData = function() {
+      var csvRows    = vm.csvData.split(/\n/); // Split by csvRows
+      var csvHeaders = csvRows.shift().split(',');
+
+      var rowObject = {};
+
+      for(var rowIndex in csvRows) {
+
+        let columns  = csvRows[rowIndex].split(',');
+
+        for(var headerIndex = 0; headerIndex < csvHeaders.length; ++headerIndex){
+          rowObject[csvHeaders[headerIndex].trim()] = columns[headerIndex].trim();
+        }
+
+        console.log(rowObject);
+
+        vm.startups.push(rowObject);
+
+        rowObject = {};
+
+      }
+
+
+      console.log(vm.startups);
+
 
     }
 
