@@ -6,7 +6,7 @@ you need to install nodeJS, npm, gulp, and bower
 --------------
 ## Install project
 ``` bash
-git@github.com:trughooputh/mapquest.git
+git clone git@github.com:trughooputh/mapquest.git
 cd mapquest
 ```
 
