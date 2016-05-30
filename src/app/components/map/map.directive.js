@@ -32,6 +32,11 @@ class MapController {
 
     var vm = this;
 
+    NgMap.getMap().then(function(map) {
+      //console.log('map', map);
+      vm.map = map;
+    });
+
     vm.apikey = 'AIzaSyDAd2qIO-6YvsXdouuxfhfwHDfrzErA0yU'; // need to be a const in config
     vm.positions = [];
 
@@ -43,12 +48,13 @@ class MapController {
 
     if (startups.length > 0) {
 
-        for(var i = 0; i < startups.length; ++i){
+        for(var i = 0; i < startups.length; ++i) {
           let lat = startups[i]["Garage Latitude"];
           let lng = startups[i]["Garage Longitude"];
 
           let pos = {
-            pos: [lat, lng]
+            pos: [lat, lng],
+            data: startups[i]
           };
 
           this.positions.push(pos);
@@ -56,4 +62,11 @@ class MapController {
         }
      }
   }
+  showDetail (e, startup) {
+    //var vm = this;
+
+    this.startup = startup;
+
+    this.map.showInfoWindow('my-iw', this.startup);
+  };
 }

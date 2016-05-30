@@ -29,6 +29,10 @@ class CsvImporterController {
         vm.startups = []
         vm.csvData = data;
         this.parseCsvData();
+
+        // Go to map
+        window.scroll(0, document.querySelector('#map-quest-map').offsetTop);
+
       }
     }
 
