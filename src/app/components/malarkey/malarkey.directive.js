@@ -24,8 +24,6 @@ export function MalarkeyDirective(malarkey) {
       postfix: ' '
     });
 
-    //el.addClass('acme-malarkey');
-
     angular.forEach(scope.values, (value) => {
       typist.type(value).pause().delete();
     });
@@ -39,9 +37,7 @@ class MalarkeyController {
     'ngInject';
 
     this.$log = $log;
-    this.contributors = [];
 
-    //this.activate(githubContributor);
   }
 
 }

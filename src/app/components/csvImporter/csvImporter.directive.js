@@ -16,7 +16,7 @@ export function CsvImporterDirective() {
 }
 
 class CsvImporterController {
-  constructor () {
+  constructor ($window, $document) {
     'ngInject';
 
     var vm = this;
@@ -31,7 +31,7 @@ class CsvImporterController {
         this.parseCsvData();
 
         // Go to map
-        window.scroll(0, document.querySelector('#map-quest-map').offsetTop);
+        $window.scroll(0, document.querySelector('#map-quest-map').offsetTop);
 
       }
     }

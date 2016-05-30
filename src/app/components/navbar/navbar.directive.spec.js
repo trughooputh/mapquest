@@ -7,12 +7,12 @@ describe('directive navbar', function() {
   let vm;
   let element;
 
-  beforeEach(angular.mock.module('mapquestBis'));
+  beforeEach(angular.mock.module('mapquest'));
 
   beforeEach(inject(($compile, $rootScope) => {
 
     element = angular.element(`
-      <navbar-directive></navbar-directive>
+      <navbar-directive data=[]></navbar-directive>
     `);
 
     $compile(element)($rootScope.$new());

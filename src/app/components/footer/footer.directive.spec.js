@@ -7,7 +7,7 @@ describe('directive footer', function() {
   let vm;
   let element;
 
-  beforeEach(angular.mock.module('mapquestBis'));
+  beforeEach(angular.mock.module('mapquest'));
 
   beforeEach(inject(($compile, $rootScope) => {
 

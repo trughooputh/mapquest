@@ -8,15 +8,12 @@ describe('directive malarkey', function() {
   let vm;
   let element;
 
-  beforeEach(angular.mock.module('mapquestBis'));
+  beforeEach(angular.mock.module('mapquest'));
 
-  beforeEach(inject(($compile, $rootScope, githubContributor, $q) => {
-    spyOn(githubContributor, 'getContributors').and.callFake(() => {
-      return $q.when([{}, {}, {}, {}, {}, {}]);
-    });
+  beforeEach(inject(($compile, $rootScope) => {
 
     element = angular.element(`
-      <acme-malarkey extra-values="['Poney', 'Monkey']"></acme-malarkey>
+      <malarkey-directive values="['Poney', 'Monkey']"></malarkey-directive>
     `);
 
     $compile(element)($rootScope.$new());
@@ -24,18 +21,4 @@ describe('directive malarkey', function() {
     vm = element.isolateScope().vm;
   }));
 
-  it('should be compiled', () => {
-    expect(element.html()).not.toEqual(null);
-  });
-
-  it('should have isolate scope object with instanciate members', () => {
-    expect(vm).toEqual(jasmine.any(Object));
-
-    expect(vm.contributors).toEqual(jasmine.any(Array));
-    expect(vm.contributors.length).toEqual(6);
-  });
-
-  it('should log a info', inject($log => {
-    expect($log.info.logs).toEqual(jasmine.stringMatching('Activated Contributors View'));
-  }));
 });

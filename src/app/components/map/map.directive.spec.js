@@ -7,12 +7,12 @@ describe('directive map', function() {
   let vm;
   let element;
 
-  beforeEach(angular.mock.module('mapquestBis'));
+  beforeEach(angular.mock.module('mapquest'));
 
   beforeEach(inject(($compile, $rootScope) => {
 
     element = angular.element(`
-      <map-directive></map-directive>
+      <map-directive data=[]></map-directive>
     `);
 
     $compile(element)($rootScope.$new());

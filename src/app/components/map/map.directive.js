@@ -33,7 +33,6 @@ class MapController {
     var vm = this;
 
     NgMap.getMap().then(function(map) {
-      //console.log('map', map);
       vm.map = map;
     });
 
@@ -63,10 +62,9 @@ class MapController {
      }
   }
   showDetail (e, startup) {
-    //var vm = this;
 
     this.startup = startup;
 
-    this.map.showInfoWindow('my-iw', this.startup);
+    //this.map.showInfoWindow('my-iw', this.startup);
   };
 }
