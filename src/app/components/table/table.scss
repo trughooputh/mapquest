@@ -3,8 +3,15 @@
     > thead {
       > tr {
         > th {
-          text-align: center;
+          text-align: left;
+          font-size: 10px;
         }
+      }
+    }
+    .thumbnail {
+      img {
+        max-width: 150px;
+        height: 80px;
       }
     }
   }

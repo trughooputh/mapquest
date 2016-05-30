@@ -1,4 +1,4 @@
-export function MapDirective($log) {
+export function MapDirective() {
   'ngInject';
 
   let directive = {
@@ -27,13 +27,13 @@ export function MapDirective($log) {
 }
 
 class MapController {
-  constructor (NgMap) {
+  constructor () {
     'ngInject';
 
     var vm = this;
 
     vm.apikey = 'AIzaSyDAd2qIO-6YvsXdouuxfhfwHDfrzErA0yU'; // need to be a const in config
-    vm.positions =[];
+    vm.positions = [];
 
   }
 
@@ -42,8 +42,6 @@ class MapController {
     let startups = this.data;
 
     if (startups.length > 0) {
-
-      let pos = [];
 
         for(var i = 0; i < startups.length; ++i){
           let lat = startups[i]["Garage Latitude"];

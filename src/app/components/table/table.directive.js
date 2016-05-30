@@ -1,4 +1,4 @@
-export function TableDirective($log) {
+export function TableDirective() {
   'ngInject';
 
   let directive = {
@@ -10,7 +10,7 @@ export function TableDirective($log) {
     controller: TableController,
     controllerAs: 'vm',
     bindToController: true,
-    link: function (scope, element, attrs) {
+    link: function () {
     }
   };
 

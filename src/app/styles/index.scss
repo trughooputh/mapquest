@@ -6,25 +6,34 @@
 @import 'header';
 
 // Components
-@import '../components/navbar/navbar.scss';
-@import '../components/csvImporter/csvImporter.scss';
-@import '../components/malarkey/malarkey.scss';
+@import 'components';
 
 @import 'typography';
 
 body {
+
+  .browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+  }
+
   .container {
+    font-family: $font-open;
     .illustration {
       width: 80%;
     }
     .lead {
       text-align: left;
-      margin: 4% 30% 0 0;
+      margin: 8% 30% 0 0;
+      line-height: 34px;
+      font-style: italic;
     }
   }
   h1 {
     font-size: 65px;
-    margin: 30px 0;
+    margin: 10px 0 30px;
   }
 }
 
@@ -40,20 +49,6 @@ body {
  */
 // bower:scss
 // endbower
-
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-
-.thumbnail {
-  img {
-    max-width: 150px;
-    height: 80px;
-  }
-}
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject

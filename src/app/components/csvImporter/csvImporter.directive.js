@@ -1,4 +1,4 @@
-export function CsvImporterDirective($log) {
+export function CsvImporterDirective() {
   'ngInject';
 
   let directive = {
@@ -8,7 +8,7 @@ export function CsvImporterDirective($log) {
     controller: CsvImporterController,
     controllerAs: 'vm',
     bindToController: true,
-    link: function (scope, element, attrs) {
+    link: function () {
     }
   };
 
@@ -16,7 +16,7 @@ export function CsvImporterDirective($log) {
 }
 
 class CsvImporterController {
-  constructor ($log) {
+  constructor () {
     'ngInject';
 
     var vm = this;

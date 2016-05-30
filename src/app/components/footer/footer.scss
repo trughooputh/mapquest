@@ -1,4 +1,10 @@
 .footer {
+  background-color: $base-color;
+  color: $white;
+  border-radius: initial;
+  padding: 3% 5%;
+  margin-top: 20px;
+  border-top: 2px solid orange;
   p {
     font-weight: bold;
   }

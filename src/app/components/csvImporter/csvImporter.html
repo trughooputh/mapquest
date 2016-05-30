@@ -1,19 +1,18 @@
-<div>{{vm.data}}</div>
-
-<div class="csv-importer text-center">
+<div class="csv-importer">
   <div class="row">
     <textarea name="name" rows="8" cols="40" ng-model="data" ng-value="data" ></textarea>
-    <button type="button" class="btn btn-success" ng-click="vm.importData(data)">Import data</button>
+    <button type="button" class="btn btn-success" ng-click="vm.importData(data)">
+      <i class="icon-user icon-white"></i> Import data</button>
   </div>
 
   <map-directive data="vm.startups"></map-directive>
-  <table-directive data="vm.startups"></table-directive>
+  <table-directive data="vm.startups" ng-show="vm.startups.length > 0"></table-directive>
 
   <div class="row hide">
     <uib-tabset active="active" ng-show="vm.startups.length > 0">
-      <uib-tab index="0" heading="Table">
+      <uib-tab index="0" heading="Map">
       </uib-tab>
-      <uib-tab index="1" heading="Map">
+      <uib-tab index="1" heading="Table">
       </uib-tab>
     </uib-tabset>
   </div>
