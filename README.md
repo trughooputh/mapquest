@@ -4,13 +4,19 @@
 you need to install nodeJS, npm, gulp, and bower
 
 --------------
-## Installation
+## Install project
+``` bash
+git@github.com:trughooputh/mapquest.git
+cd mapquest
+```
+
+## Install dependencies
 ``` bash
 bower install
 npm install
 ```
 
-## To Get Started
+## To get started
 ``` bash
 gulp serve:dist
 ```
