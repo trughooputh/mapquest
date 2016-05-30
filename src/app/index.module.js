@@ -1,4 +1,4 @@
-/* global malarkey:false */
+/* global malarkey:false, ngMap: false */
 
 import { config } from './index.config';
 import { routerConfig } from './index.route';
@@ -14,7 +14,7 @@ import { MalarkeyDirective } from '../app/components/malarkey/malarkey.directive
 
 angular
   .module('mapquest',
-    ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngRoute', 'ui.bootstrap'])
+    ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngRoute', 'ui.bootstrap', 'ngMap'])
       .constant('malarkey', malarkey)
       .config(config)
       .config(routerConfig)

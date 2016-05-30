@@ -27,7 +27,7 @@ export function MapDirective() {
 }
 
 class MapController {
-  constructor () {
+  constructor (NgMap) {
     'ngInject';
 
     var vm = this;
