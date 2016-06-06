@@ -2,23 +2,27 @@
   <table class="table">
     <thead>
       <tr>
-        <th>#</th>
-        <th>Company</th>
-        <th>Founder</th>
-        <th>Adress</th>
-        <th>City</th>
-        <th>Website</th>
-        <th>Photo</th>
+        <th sortable>#</th>
+        <th sortable>Company</th>
+        <th sortable>Founder</th>
+        <th sortable>Adress</th>
+        <th sortable>City</th>
+        <th sortable>Website</th>
+        <th sortable>Photo</th>
+        <th sortable>Map</th>
       </tr>
-      <tr ng-repeat="startup in vm.data">
-        <td>{{ startup.Id }}</td>
-        <td>{{ startup['Company Name'] }}</td>
-        <td>{{ startup.Founder }}</td>
-        <td>{{ startup['Street'] }} {{ startup['Postal Code'] }}</td>
-        <td>{{ startup['City'] }} ({{ startup['Country'] }})</td>
-        <td><a ng-href="{{ startup['Home Page'] }}" target='_blank'>Link</a></td>
+      <tr ng-repeat="startup in vm.data" ng-click="startup.on_map = !startup.on_map">
+        <td>{{ startup.id }}</td>
+        <td>{{ startup.company_name }}</td>
+        <td>{{ startup.founder }}</td>
+        <td>{{ startup.street }} {{ startup.postal_code }}</td>
+        <td>{{ startup.city }} ({{ startup.country }})</td>
+        <td><a ng-href="{{ startup.home_page }}" target='_blank'>Link</a></td>
         <td class="thumbnail">
-          <img ng-src="{{ startup.Photo }}" alt="{{ startup.title }}">
+          <img ng-src="{{ startup.photo }}" alt="{{ startup.title }}">
+        </td>
+        <td>
+          <input type="checkbox" ng-model="startup.on_map" />
         </td>
       </tr>
     </thead>

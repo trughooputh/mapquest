@@ -43,13 +43,15 @@ class MapController {
 
   getMarkers () {
 
+    
+
     let startups = this.data;
 
     if (startups.length > 0) {
 
         for(var i = 0; i < startups.length; ++i) {
-          let lat = startups[i]["Garage Latitude"];
-          let lng = startups[i]["Garage Longitude"];
+          let lat = startups[i]["garage_latitude"];
+          let lng = startups[i]["garage_longitude"];
 
           let pos = {
             pos: [lat, lng],
@@ -66,5 +68,5 @@ class MapController {
     this.startup = startup;
 
     //this.map.showInfoWindow('my-iw', this.startup);
-  };
+  }
 }

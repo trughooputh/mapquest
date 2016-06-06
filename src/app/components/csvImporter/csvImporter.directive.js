@@ -48,10 +48,14 @@ class CsvImporterController {
         let columns  = csvRows[rowIndex].split(',');
 
         for(var headerIndex = 0; headerIndex < csvHeaders.length; ++headerIndex){
-          rowObject[csvHeaders[headerIndex].trim()] = columns[headerIndex].trim();
+          let headerlabel = csvHeaders[headerIndex].trim().replace(/\s+/g, '_').toLowerCase(); // Cleaning label
+          rowObject[headerlabel] = columns[headerIndex].trim();
         }
+        rowObject['on_map'] = true;
 
         vm.startups.push(rowObject);
+
+        console.log(vm.startups);
 
         rowObject = {};
 

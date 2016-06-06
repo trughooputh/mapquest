@@ -16,7 +16,9 @@ export function SortableDirective() {
 
   return directive;
 
-  function linkFunc() {
+  function linkFunc(scope, el) {
+    console.log('sortable directive');
+    //el[0].addClass('sortable');
   }
 
 }
