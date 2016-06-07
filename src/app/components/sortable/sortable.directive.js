@@ -26,7 +26,7 @@ export function SortableDirective() {
 class SortableController {
   constructor () {
     'ngInject';
-
+    console.log('SortableController');
   }
 
 }

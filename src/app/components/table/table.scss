@@ -2,9 +2,34 @@
   .table {
     > thead {
       > tr {
+        position: relative;
         > th {
           text-align: left;
-          font-size: 10px;
+          font-size: 12px;
+          &:focus {
+            outline: none;
+            border: 0;
+          }
+          &.sortable {
+            &:hover {
+              text-decoration: underline;
+            }
+            &.asc, &.desc {
+              &:after {
+                position: relative;
+                left: 9px;
+                font-size: 7px;
+                top: -1px;
+                text-decoration: none;
+              }
+            }
+            &.desc:after {
+              content: '↑';
+            }
+            &.asc:after {
+              content: '↓';
+            }
+          }
         }
       }
     }

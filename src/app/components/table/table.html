@@ -2,18 +2,18 @@
   <table class="table">
     <thead>
       <tr>
-        <th sortable>#</th>
-        <th sortable>Company</th>
-        <th sortable>Founder</th>
-        <th sortable>Adress</th>
-        <th sortable>City</th>
-        <th sortable>Website</th>
-        <th sortable>Photo</th>
-        <th sortable>Map</th>
+        <th class="sortable" ng-class="vm.checkClass('id')" ng-click="vm.setSort('id')">#</th>
+        <th class="sortable" ng-class="vm.checkClass('company_name')" ng-click="vm.setSort('company_name')">Company</th>
+        <th class="sortable" ng-class="vm.checkClass('founder')" ng-click="vm.setSort('founder')">Founder</th>
+        <th class="sortable" ng-class="vm.checkClass('street')" ng-click="vm.setSort('street')">Adress</th>
+        <th class="sortable" ng-class="vm.checkClass('city')" ng-click="vm.setSort('city')">City</th>
+        <th>Website</th>
+        <th>Photo</th>
+        <th class="sortable" ng-class="vm.checkClass('on_map')" ng-click="vm.setSort('on_map')">Map</th>
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="startup in vm.data" ng-click="startup.on_map = !startup.on_map" ng-class="startup.on_map ? 'selected' : ''">
+      <tr ng-repeat="startup in vm.data | orderBy: vm.sort " ng-click="startup.on_map=!startup.on_map" ng-class="startup.on_map ? 'selected' : ''">
         <td>{{ startup.id }}</td>
         <td>{{ startup.company_name }}</td>
         <td>{{ startup.founder }}</td>

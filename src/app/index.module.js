@@ -4,7 +4,6 @@ import { config } from './index.config';
 import { routerConfig } from './index.route';
 import { runBlock } from './index.run';
 import { MainController } from './main/main.controller';
-//import { removeSpacesThenLowercase } from '../app/main/main.filter';
 import { NavbarDirective } from '../app/components/navbar/navbar.directive';
 import { TableDirective } from '../app/components/table/table.directive';
 import { SortableDirective } from '../app/components/sortable/sortable.directive';
@@ -28,4 +27,3 @@ angular
       .directive('csvImporterDirective', CsvImporterDirective)
       .directive('malarkeyDirective', MalarkeyDirective)
       .directive('footerDirective', FooterDirective);
-      //.filter('removeSpacesThenLowercase', removeSpacesThenLowercase);

@@ -16,7 +16,7 @@ export function CsvImporterDirective() {
 }
 
 class CsvImporterController {
-  constructor ($window, $document) {
+  constructor ($window) {
     'ngInject';
 
     var vm = this;
@@ -26,19 +26,18 @@ class CsvImporterController {
 
     this.importData = function(data) {
       if (data) {
-        vm.startups = []
         vm.csvData = data;
+        vm.startups = []
         this.parseCsvData();
 
         // Go to map
         $window.scroll(0, document.querySelector('#map-quest-map').offsetTop);
-
       }
     }
 
     this.parseCsvData = function() {
       var csvRows    = vm.csvData.split(/\n/); // Split by csvRows
-      var csvHeaders = csvRows.shift().split(',');
+      var csvHeaders = csvRows.shift().split(','); // Header row
 
       var rowObject = {};
 
