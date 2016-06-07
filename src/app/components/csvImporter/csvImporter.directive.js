@@ -52,14 +52,15 @@ class CsvImporterController {
           rowObject[headerlabel] = columns[headerIndex].trim();
         }
         rowObject['on_map'] = true;
+        //rowObject['position'] = [rowObject['garage_latitude'], rowObject['garage_longitude']];
 
         vm.startups.push(rowObject);
-
-        console.log(vm.startups);
 
         rowObject = {};
 
       }
+
+      console.log(vm.startups);
 
     }
 

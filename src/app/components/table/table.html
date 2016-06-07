@@ -11,7 +11,9 @@
         <th sortable>Photo</th>
         <th sortable>Map</th>
       </tr>
-      <tr ng-repeat="startup in vm.data" ng-click="startup.on_map = !startup.on_map">
+    </thead>
+    <tbody>
+      <tr ng-repeat="startup in vm.data" ng-click="startup.on_map = !startup.on_map" ng-class="startup.on_map ? 'selected' : ''">
         <td>{{ startup.id }}</td>
         <td>{{ startup.company_name }}</td>
         <td>{{ startup.founder }}</td>
@@ -19,12 +21,12 @@
         <td>{{ startup.city }} ({{ startup.country }})</td>
         <td><a ng-href="{{ startup.home_page }}" target='_blank'>Link</a></td>
         <td class="thumbnail">
-          <img ng-src="{{ startup.photo }}" alt="{{ startup.title }}">
+          <img ng-src="{{ startup.photo }}" alt="{{ startup.title }}" />
         </td>
         <td>
           <input type="checkbox" ng-model="startup.on_map" />
         </td>
       </tr>
-    </thead>
+    </tbody>
   </table>
 </div>

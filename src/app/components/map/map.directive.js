@@ -11,9 +11,8 @@ export function MapDirective() {
     controllerAs: 'vm',
     bindToController: true,
     link: function (scope, el, attr, vm) {
-        let watcher;
 
-        watcher = scope.$watch('vm.data', () => {
+        let watcher = scope.$watch('vm.data', () => {
           vm.getMarkers();
         });
 
@@ -30,43 +29,33 @@ class MapController {
   constructor (NgMap) {
     'ngInject';
 
-    var vm = this;
+    this.vm = this;
+
+    var that = this;
 
     NgMap.getMap().then(function(map) {
-      vm.map = map;
+      that.vm.map = map;
     });
 
-    vm.apikey = 'AIzaSyDAd2qIO-6YvsXdouuxfhfwHDfrzErA0yU'; // need to be a const in config
-    vm.positions = [];
+    this.vm.apikey = 'AIzaSyDAd2qIO-6YvsXdouuxfhfwHDfrzErA0yU'; // need to be a const in config
 
   }
 
   getMarkers () {
 
-    
-
-    let startups = this.data;
-
-    if (startups.length > 0) {
-
-        for(var i = 0; i < startups.length; ++i) {
-          let lat = startups[i]["garage_latitude"];
-          let lng = startups[i]["garage_longitude"];
-
-          let pos = {
-            pos: [lat, lng],
-            data: startups[i]
-          };
-
-          this.positions.push(pos);
-          pos = [];
-        }
-     }
   }
+
   showDetail (e, startup) {
+    console.log(this);
+    console.log(startup);
 
-    this.startup = startup;
+    startup.position = [startup['garage_latitude'], startup['garage_longitude'] ]
 
-    //this.map.showInfoWindow('my-iw', this.startup);
+    this.map.startup = startup;
+
+    //this.startup = startup;
+
+    this.map.showInfoWindow('foo-iw', startup.id);
   }
+
 }

@@ -33,10 +33,8 @@ export function MalarkeyDirective(malarkey) {
 }
 
 class MalarkeyController {
-  constructor ($log) {
+  constructor () {
     'ngInject';
-
-    this.$log = $log;
 
   }
 
