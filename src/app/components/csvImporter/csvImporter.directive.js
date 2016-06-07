@@ -31,7 +31,8 @@ class CsvImporterController {
         this.parseCsvData();
 
         // Go to map
-        $window.scroll(0, document.querySelector('#map-quest-map').offsetTop);
+        let mapElement = angular.element(document.querySelector('#map-quest-map'));
+        $window.scroll(0, mapElement[0].offsetTop);
       }
     }
 
@@ -58,8 +59,6 @@ class CsvImporterController {
         rowObject = {};
 
       }
-
-      console.log(vm.startups);
 
     }
 

@@ -46,14 +46,8 @@ class MapController {
   }
 
   showDetail (e, startup) {
-    console.log(this);
-    console.log(startup);
-
     startup.position = [startup['garage_latitude'], startup['garage_longitude'] ]
-
     this.map.startup = startup;
-
-    //this.startup = startup;
 
     this.map.showInfoWindow('foo-iw', startup.id);
   }

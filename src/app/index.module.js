@@ -6,7 +6,6 @@ import { runBlock } from './index.run';
 import { MainController } from './main/main.controller';
 import { NavbarDirective } from '../app/components/navbar/navbar.directive';
 import { TableDirective } from '../app/components/table/table.directive';
-import { SortableDirective } from '../app/components/sortable/sortable.directive';
 import { MapDirective } from '../app/components/map/map.directive';
 import { FooterDirective } from '../app/components/footer/footer.directive';
 import { CsvImporterDirective } from '../app/components/csvImporter/csvImporter.directive';
@@ -22,7 +21,6 @@ angular
       .controller('MainController', MainController)
       .directive('navbarDirective', NavbarDirective)
       .directive('tableDirective', TableDirective)
-      .directive('sortableDirective', SortableDirective)
       .directive('mapDirective', MapDirective)
       .directive('csvImporterDirective', CsvImporterDirective)
       .directive('malarkeyDirective', MalarkeyDirective)
